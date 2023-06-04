@@ -12,11 +12,10 @@ function SignUpForm() {
     event.preventDefault()
 
     const newUser = {
-      name: name,
-      password: password,
+      name: name.value,
+      password: password.value,
     }
     dispatch(createUser(newUser));
-
     name.setValue('')
     password.setValue('')
   }
