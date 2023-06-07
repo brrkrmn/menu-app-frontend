@@ -1,28 +1,25 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { createUser } from '../../reducers/usersReducer';
 import useField from '../../hooks/useField';
+import signupService from '../../services/signup';
 
 function SignUpForm() {
-  const dispatch = useDispatch();
   const name = useField('text');
   const password = useField('text');
 
   const handleSignUp = async (event) => {
     event.preventDefault()
-
     const newUser = {
       name: name.value,
       password: password.value,
     }
-    dispatch(createUser(newUser));
+    signupService.create(newUser)
     name.setValue('')
     password.setValue('')
   }
 
   return (
     <form onSubmit={handleSignUp}>
-      <legend>Get Started</legend>
+      <legend>Sign Up</legend>
       <label htmlFor='name'>Restaurant Name</label>
       <input 
         type={name.type}
