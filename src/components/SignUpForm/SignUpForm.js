@@ -2,9 +2,9 @@ import React from 'react';
 import useField from '../../hooks/useField';
 import signupService from '../../services/signup';
 
-function SignUpForm() {
+const SignUpForm = () => {
   const name = useField('text');
-  const password = useField('text');
+  const password = useField('password');
 
   const handleSignUp = async (event) => {
     event.preventDefault()
@@ -12,7 +12,7 @@ function SignUpForm() {
       name: name.value,
       password: password.value,
     }
-    signupService.create(newUser)
+    await signupService.create(newUser)
     name.setValue('')
     password.setValue('')
   }
