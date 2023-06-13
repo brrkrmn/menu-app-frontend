@@ -32,7 +32,6 @@ const LogInForm = () => {
   }
 
   const inputStyles = {
-    borderRadius: '20px',
   }
 
   return (
@@ -45,7 +44,7 @@ const LogInForm = () => {
           onChange={name.onChange}
           placeholder='İsim'
           focusBorderColor='#6D8B74'
-          sx={inputStyles}
+          borderRadius='20px'
         />
         <Input
           id='logInPassword'
@@ -55,7 +54,7 @@ const LogInForm = () => {
           onChange={password.onChange}
           placeholder='Şifre'
           focusBorderColor='#6D8B74'
-          sx={inputStyles}
+          borderRadius='20px'
         />
       <Button
         type='submit'

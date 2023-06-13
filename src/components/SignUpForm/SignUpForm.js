@@ -1,8 +1,8 @@
+import { Box, Button, Input } from '@chakra-ui/react';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useField from '../../hooks/useField';
 import signupService from '../../services/signup';
-import styles from './SignUpForm.module.css';
-import { useNavigate, Link } from 'react-router-dom'
 
 const SignUpForm = () => {
   const navigate = useNavigate();
@@ -22,34 +22,37 @@ const SignUpForm = () => {
   }
 
   return (
-    <div>
-      <form className={styles.container} onSubmit={handleSignUp}>
-        <legend>Sign Up</legend>
-        <label htmlFor='name'>Restaurant Name</label>
-        <input 
-          type={name.type}
-          id='name'
-          value={name.value}
-          name='name'
-          onChange={name.onChange}
-        />
-
-        <label htmlFor='password'>Password</label>
-        <input 
-          type={password.type}
-          id='password'
-          value={password.value}
-          name='password'
-          onChange={password.onChange}
-        />
-        <button type='submit'>Sign Up</button>
-      </form>
-      <p>
-        Already have an account?
-        <Link to='/login'>Log in!</Link>
-      </p>
-    </div>
-
+    <Box as='form' onSubmit={handleSignUp} display='flex' flexDirection='column' gap='12px'>
+      <Input
+        type={name.type}
+        id='name'
+        value={name.value}
+        name='name'
+        onChange={name.onChange}
+        focusBorderColor='#6D8B74'
+        placeholder='İsim'
+      />
+      <Input
+        type={password.type}
+        id='password'
+        value={password.value}
+        name='password'
+        onChange={password.onChange}
+        focusBorderColor='#6D8B74'
+        placeholder='Şifre'
+      />
+      <Button
+        type='submit'
+        borderRadius='20px'
+        bg='#6D8B74'
+        color='white'
+        _hover={{
+          background: '#5F7161'
+        }}
+      >
+        Kaydol
+      </Button>
+    </Box>
   )
 }
 

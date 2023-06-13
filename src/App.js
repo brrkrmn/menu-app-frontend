@@ -1,14 +1,13 @@
 import React from "react";
 
+import { useDispatch, useSelector } from "react-redux";
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Dashboard from "./components/Dashboard/Dashboard";
 import LandingPage from "./components/LandingPage/LandingPage";
 import LogInPage from "./components/LogInPage/LogInPage";
 import Menu from "./components/Menu";
 import ProtectedRoutes from "./components/ProtectedRoutes/ProtectedRoutes";
-import SignUpForm from "./components/SignUpForm/SignUpForm";
-
-import { useDispatch, useSelector } from "react-redux";
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import SignUpPage from "./components/SignUpPage/SignUpPage";
 import { initializeLoggedInUser } from "./reducers/loggedInUserReducer";
 
 function App() {
@@ -26,7 +25,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<LandingPage />} />
-      <Route path='/signup' element={<SignUpForm />} />
+      <Route path='/signup' element={<SignUpPage />} />
       <Route path='/login' element={<LogInPage />} />
       <Route element={<ProtectedRoutes />} >
         <Route path='/home' element={<Dashboard />} />

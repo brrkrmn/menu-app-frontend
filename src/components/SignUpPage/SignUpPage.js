@@ -1,8 +1,8 @@
 import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
-import LogInForm from '../LogInForm/LogInForm';
+import SignUpForm from '../SignUpForm';
 
-const LogInPage = () => {
+const SignUpPage = () => {
   return (
     <Flex alignItems='center' justifyContent='space-between' height='100%' >
       <Container display='flex' flexDirection='column' gap='12px' alignItems='center' width='100%'>
@@ -11,19 +11,19 @@ const LogInPage = () => {
           fontWeight={500}
           color='#424949'
         >
-          Giriş Yap
+          Kaydol
         </Heading>
-        <LogInForm />
+        <SignUpForm />
         <Text color='#424949'>
-          Hesabınız yok mu?
+          Zaten üye misiniz?
           <Text
             as='a'
-            href='/signup'
+            href='/login'
             color='#6D8B74'
             fontWeight='bold'
           >
           <> </>
-            Üye olun
+            Giriş yapın
           </Text>
         </Text>
       </Container>
@@ -38,4 +38,4 @@ const LogInPage = () => {
   )
 }
 
-export default LogInPage;
+export default SignUpPage;
