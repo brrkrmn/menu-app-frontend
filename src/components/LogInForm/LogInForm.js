@@ -1,9 +1,10 @@
+import { Box, Button, Input } from '@chakra-ui/react';
 import React from 'react';
-import useField from '../../hooks/useField';
-import loginService from '../../services/login';
 import { useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
+import useField from '../../hooks/useField';
 import { logUserIn } from '../../reducers/loggedInUserReducer';
-import { useNavigate, Link } from 'react-router-dom'
+import loginService from '../../services/login';
 
 const LogInForm = () => {
   const navigate = useNavigate();
@@ -30,36 +31,42 @@ const LogInForm = () => {
     navigate('/home')
   }
 
+  const inputStyles = {
+    borderRadius: '20px',
+  }
+
   return (
-    <div>
-      <form onSubmit={handleLogIn} >
-        <legend>Log In</legend>
-        <label htmlFor='logInName'>Name</label>
-        <input 
+      <Box as='form' onSubmit={handleLogIn} display='flex' flexDirection='column' gap='12px'>
+        <Input
           id='logInName'
           name='name'
           type={name.type}
           value={name.value}
           onChange={name.onChange}
+          placeholder='İsim'
+          focusBorderColor='#6D8B74'
+          sx={inputStyles}
         />
-        <label htmlFor='logInPassword'>Password</label>
-        <input 
+        <Input
           id='logInPassword'
           name='password'
           type={password.type}
           value={password.value}
           onChange={password.onChange}
+          placeholder='Şifre'
+          focusBorderColor='#6D8B74'
+          sx={inputStyles}
         />
-        <button type='submit'>Log In</button>
-      </form>
-      <p>
-        Don't you have an account? 
-        <Link to='/signup'>
-          Sign up for free!
-        </Link>
-      </p>
-    </div>
-
+      <Button
+        type='submit'
+        borderRadius='20px'
+        bg='#6D8B74'
+        color='white'
+        _hover={{
+          background: '#5F7161'
+        }}
+      >Giriş Yap</Button>
+    </Box>
   )
 }
 
