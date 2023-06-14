@@ -4,6 +4,7 @@ import React from 'react';
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import useField from '../../hooks/useField';
+import useToggle from '../../hooks/useToggle';
 import { logUserIn } from '../../reducers/loggedInUserReducer';
 import loginService from '../../services/login';
 
@@ -12,7 +13,7 @@ const LogInForm = () => {
   const name = useField('text');
   const password = useField('password');
   const dispatch = useDispatch();
-  const [showPassword, setShowPassword] = React.useState(false)
+  const { visible, handleToggleVisible } = useToggle();
   const handleLogIn = async (event) => {
     event.preventDefault()
     const user = {
@@ -32,10 +33,6 @@ const LogInForm = () => {
     navigate('/home')
   }
 
-  const handleShowPassword = () => {
-    setShowPassword(!showPassword)
-  }
-
   return (
       <VStack as='form' onSubmit={handleLogIn} display='flex' flexDirection='column' w="xs" gap='16px'>
         <Input
@@ -52,15 +49,15 @@ const LogInForm = () => {
           <Input
             id='logInPassword'
             name='password'
-            type={showPassword ? 'text' : 'password'}
+            type={visible ? 'text' : 'password'}
             value={password.value}
             onChange={password.onChange}
             placeholder='Şifre'
             focusBorderColor='#6D8B74'
           borderRadius='20px'
           />
-        <InputRightElement as='button' type="button" onClick={handleShowPassword}>
-          {showPassword ? <ViewIcon /> : <ViewOffIcon /> }
+        <InputRightElement as='button' type="button" onClick={handleToggleVisible}>
+          {visible ? <ViewIcon /> : <ViewOffIcon /> }
           </InputRightElement>
         </InputGroup>
 

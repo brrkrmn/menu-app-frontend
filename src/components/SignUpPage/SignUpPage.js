@@ -1,11 +1,11 @@
-import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Spacer, Text } from '@chakra-ui/react';
 import React from 'react';
 import SignUpForm from '../SignUpForm';
 
 const SignUpPage = () => {
   return (
-    <Flex alignItems='center' justifyContent='space-between' height='100%' >
-      <Container display='flex' flexDirection='column' gap='12px' alignItems='center' width='100%'>
+    <Flex alignItems='center' justifyContent='space-between' height='100%' w='full'>
+      <Container padding='40px' display='flex' flexDirection='column' alignItems='center' gap="16px" width='fit-content' boxShadow='md' borderRadius='12px' _hover={{ boxShadow: 'xl' }} transition='0.3s'>
         <Heading
           fontFamily="'Wotfard','Wotfard-fallback',sans-serif"
           fontWeight={500}
@@ -13,6 +13,7 @@ const SignUpPage = () => {
         >
           Kaydol
         </Heading>
+        <Spacer />
         <SignUpForm />
         <Text color='#424949'>
           Zaten üye misiniz?

@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 const useToggle = () => {
-  const [value, setValue] = useState('');
+  const [visible, setVisible] = useState(false);
+  const handleToggleVisible = () => {
+    setVisible(!visible)
+  }
+  return { visible, handleToggleVisible }
 }
 
 export default useToggle;
