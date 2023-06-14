@@ -31,6 +31,7 @@ const SignUpForm = () => {
         onChange={name.onChange}
         focusBorderColor='#6D8B74'
         placeholder='İsim'
+        borderRadius='20px'
       />
       <Input
         type={password.type}
@@ -40,6 +41,7 @@ const SignUpForm = () => {
         onChange={password.onChange}
         focusBorderColor='#6D8B74'
         placeholder='Şifre'
+        borderRadius='20px'
       />
       <Button
         type='submit'

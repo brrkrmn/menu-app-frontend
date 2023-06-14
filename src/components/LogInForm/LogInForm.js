@@ -1,4 +1,5 @@
-import { Box, Button, Input } from '@chakra-ui/react';
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { Button, Input, InputGroup, InputRightElement, VStack } from '@chakra-ui/react';
 import React from 'react';
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +12,7 @@ const LogInForm = () => {
   const name = useField('text');
   const password = useField('password');
   const dispatch = useDispatch();
-
+  const [showPassword, setShowPassword] = React.useState(false)
   const handleLogIn = async (event) => {
     event.preventDefault()
     const user = {
@@ -31,11 +32,12 @@ const LogInForm = () => {
     navigate('/home')
   }
 
-  const inputStyles = {
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword)
   }
 
   return (
-      <Box as='form' onSubmit={handleLogIn} display='flex' flexDirection='column' gap='12px'>
+      <VStack as='form' onSubmit={handleLogIn} display='flex' flexDirection='column' w="xs" gap='16px'>
         <Input
           id='logInName'
           name='name'
@@ -46,26 +48,32 @@ const LogInForm = () => {
           focusBorderColor='#6D8B74'
           borderRadius='20px'
         />
-        <Input
-          id='logInPassword'
-          name='password'
-          type={password.type}
-          value={password.value}
-          onChange={password.onChange}
-          placeholder='Şifre'
-          focusBorderColor='#6D8B74'
+        <InputGroup>
+          <Input
+            id='logInPassword'
+            name='password'
+            type={showPassword ? 'text' : 'password'}
+            value={password.value}
+            onChange={password.onChange}
+            placeholder='Şifre'
+            focusBorderColor='#6D8B74'
           borderRadius='20px'
-        />
-      <Button
-        type='submit'
-        borderRadius='20px'
-        bg='#6D8B74'
-        color='white'
-        _hover={{
-          background: '#5F7161'
-        }}
-      >Giriş Yap</Button>
-    </Box>
+          />
+        <InputRightElement as='button' type="button" onClick={handleShowPassword}>
+          {showPassword ? <ViewIcon /> : <ViewOffIcon /> }
+          </InputRightElement>
+        </InputGroup>
+
+        <Button
+          type='submit'
+          borderRadius='20px'
+          bg='#6D8B74'
+          color='white'
+          w="full"
+          _hover={{
+            background: '#5F7161'
+          }}>Giriş Yap</Button>
+    </VStack>
   )
 }
 
