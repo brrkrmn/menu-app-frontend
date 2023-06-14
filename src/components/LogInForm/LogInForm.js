@@ -1,10 +1,8 @@
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { Button, Input, InputGroup, InputRightElement, VStack } from '@chakra-ui/react';
 import React from 'react';
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
+import { FormContainer, PasswordInput, SubmitButton, TextInput } from '../../formElements';
 import useField from '../../hooks/useField';
-import useToggle from '../../hooks/useToggle';
 import { logUserIn } from '../../reducers/loggedInUserReducer';
 import loginService from '../../services/login';
 
@@ -13,7 +11,6 @@ const LogInForm = () => {
   const name = useField('text');
   const password = useField('password');
   const dispatch = useDispatch();
-  const { visible, handleToggleVisible } = useToggle();
   const handleLogIn = async (event) => {
     event.preventDefault()
     const user = {
@@ -34,43 +31,11 @@ const LogInForm = () => {
   }
 
   return (
-      <VStack as='form' onSubmit={handleLogIn} display='flex' flexDirection='column' w="xs" gap='16px'>
-        <Input
-          id='logInName'
-          name='name'
-          type={name.type}
-          value={name.value}
-          onChange={name.onChange}
-          placeholder='İsim'
-          focusBorderColor='#6D8B74'
-          borderRadius='20px'
-        />
-        <InputGroup>
-          <Input
-            id='logInPassword'
-            name='password'
-            type={visible ? 'text' : 'password'}
-            value={password.value}
-            onChange={password.onChange}
-            placeholder='Şifre'
-            focusBorderColor='#6D8B74'
-          borderRadius='20px'
-          />
-        <InputRightElement as='button' type="button" onClick={handleToggleVisible}>
-          {visible ? <ViewIcon /> : <ViewOffIcon /> }
-          </InputRightElement>
-        </InputGroup>
-
-        <Button
-          type='submit'
-          borderRadius='20px'
-          bg='#6D8B74'
-          color='white'
-          w="full"
-          _hover={{
-            background: '#5F7161'
-          }}>Giriş Yap</Button>
-    </VStack>
+    <FormContainer onSubmit={handleLogIn}>
+      <TextInput target={name} placeholder='İsim' />
+      <PasswordInput password={password} />
+      <SubmitButton buttonText='Giriş Yap' />
+    </FormContainer>
   )
 }
 
