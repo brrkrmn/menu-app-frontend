@@ -1,6 +1,6 @@
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons"
 import { Button, Input, InputGroup, InputRightElement, VStack } from "@chakra-ui/react"
-import useToggle from "./hooks/useToggle"
+import useToggle from "../hooks/useToggle"
 
 export const FormContainer = ({ onSubmit, children }) => {
   return (
