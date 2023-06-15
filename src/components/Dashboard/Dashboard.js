@@ -46,9 +46,9 @@ const Dashboard = () => {
       <Divider />
       <Box>
         <Heading>Menu</Heading>
-        {menu.map(category => {
+        {menu.map((category, index) => {
           return (
-            <CategoryTable category={category} />
+            <CategoryTable key={index} category={category} />
           )
         })}
       </Box>
