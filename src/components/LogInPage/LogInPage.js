@@ -3,6 +3,7 @@ import React from 'react';
 import LogInForm from '../LogInForm/LogInForm';
 
 const LogInPage = () => {
+
   return (
     <Flex alignItems='center' justifyContent='space-between' height='100%' w="full" >
       <Container padding='40px' display='flex' flexDirection='column' alignItems='center' gap="16px" width='fit-content' boxShadow='md' borderRadius='12px' _hover={{ boxShadow: 'xl' }} transition='0.3s'>
