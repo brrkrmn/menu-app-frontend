@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CategoryTable } from '../../elements/menuElements';
 import Header from '../Header/Header';
+
 const Dashboard = () => {
   const navigate = useNavigate()
   const user = JSON.parse(localStorage.getItem('loggedInUser'))

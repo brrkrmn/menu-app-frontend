@@ -17,20 +17,21 @@ export const FormContainer = ({ onSubmit, children }) => {
   )
 }
 
-export const TextInput = ({ target, placeholder }) => {
+export const TextInput = ({ target, placeholder, initialValue }) => {
   return (
     <Input
-      id='name'
-      name='name'
+      id="name"
+      name="name"
       type={target.type}
       value={target.value}
       onChange={target.onChange}
       placeholder={placeholder}
-      focusBorderColor='#6D8B74'
-      borderRadius='20px'
+      defaultValue={initialValue}
+      focusBorderColor="#6D8B74"
+      borderRadius="20px"
     />
-  )
-}
+  );
+};
 
 export const PasswordInput = ({ password }) => {
   const { visible, handleToggleVisible } = useToggle()
