@@ -26,11 +26,11 @@ const SignUpForm = () => {
 
   return (
     <FormContainer onSubmit={handleSignUp}>
-      <TextInput target={name} placeholder='İsim' />
-      <PasswordInput password={password} />
-      <SubmitButton buttonText='Kaydol' />
+      <TextInput target={name} placeholder="İsim" id="signupName" />
+      <PasswordInput password={password} id="signupPassword" />
+      <SubmitButton>Kaydol</SubmitButton>
     </FormContainer>
-  )
+  );
 }
 
 export default SignUpForm;

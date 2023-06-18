@@ -25,9 +25,9 @@ const CategoryTable = ({ category }) => {
             </Tr>
           </Thead>
           <Tbody>
-            {category.items.map((item, index) => {
-              return <ItemTable key={index} item={item} />;
-            })}
+            {category.items.map((item, index) => (
+              <ItemTable key={index} item={item} />
+            ))}
           </Tbody>
         </Table>
       </Box>

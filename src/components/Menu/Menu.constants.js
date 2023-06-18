@@ -1,4 +1,4 @@
-const menu = {
+export const menu = {
   categories: [
     {
       name: "tatli",
@@ -41,4 +41,3 @@ const menu = {
     },
   ],
 };
-export default menu;

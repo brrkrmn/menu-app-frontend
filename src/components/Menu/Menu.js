@@ -1,6 +1,6 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import React from "react";
-import menu from "./Menu.constants";
+import { menu } from "./Menu.constants";
 import CategoryTable from "./components/CategoryTable";
 
 const Menu = () => {

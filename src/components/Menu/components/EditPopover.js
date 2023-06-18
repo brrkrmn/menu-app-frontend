@@ -26,6 +26,7 @@ const EditPopover = ({ target }) => {
       headerElement={headerElement}
       triggerElement={<CircleIconButton label={"edit"} icon={<EditIcon />} />}
       bodyElement={<BodyElement />}
+      approveButtonText={"Kaydet"}
     />
   );
 };

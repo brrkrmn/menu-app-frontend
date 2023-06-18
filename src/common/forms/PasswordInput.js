@@ -2,14 +2,14 @@ import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import useToggle from "../../hooks/useToggle";
 
-const PasswordInput = ({ password }) => {
+const PasswordInput = ({ password, id }) => {
   const { visible, handleToggleVisible } = useToggle();
   return (
     <InputGroup>
       <Input
         type={visible ? "text" : "password"}
-        id="password"
-        name="password"
+        id={id}
+        name={id}
         value={password.value}
         onChange={password.onChange}
         focusBorderColor="#6D8B74"

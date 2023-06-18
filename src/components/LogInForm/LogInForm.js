@@ -35,11 +35,11 @@ const LogInForm = () => {
 
   return (
     <FormContainer onSubmit={handleLogIn}>
-      <TextInput target={name} placeholder='İsim' />
-      <PasswordInput password={password} />
-      <SubmitButton buttonText='Giriş Yap' />
+      <TextInput target={name} placeholder="İsim" id="loginName" />
+      <PasswordInput password={password} id="loginPassword" />
+      <SubmitButton>Giriş Yap</SubmitButton>
     </FormContainer>
-  )
+  );
 }
 
 export default LogInForm;

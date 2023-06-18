@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/react";
 
-const ApproveButton = ({ text }) => {
+const ApproveButton = ({ text = "Onayla" }) => {
   return (
     <Button
       bg="none"
@@ -10,7 +10,7 @@ const ApproveButton = ({ text }) => {
       _hover={{ bg: "#6D8B74", color: "white" }}
       size="sm"
     >
-      {text ? text : "Onayla"}
+      {text}
     </Button>
   );
 };

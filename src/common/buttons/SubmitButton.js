@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/react";
 
-const SubmitButton = ({ buttonText }) => {
+const SubmitButton = ({ children }) => {
   return (
     <Button
       type="submit"
@@ -12,7 +12,7 @@ const SubmitButton = ({ buttonText }) => {
         bg: "#5F7161",
       }}
     >
-      {buttonText}
+      {children}
     </Button>
   );
 };
