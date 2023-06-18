@@ -1,6 +1,6 @@
 import { Box, Divider, Flex, Heading } from '@chakra-ui/react';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { CategoryTable } from '../../elements/menuElements';
 import Header from '../Header/Header';
 
