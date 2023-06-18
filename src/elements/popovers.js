@@ -9,7 +9,9 @@ import {
   PopoverTrigger,
 } from "@chakra-ui/react";
 import React from "react";
-import { ApproveButton, CancelButton, CircleIconButton } from "./buttons";
+import ApproveButton from "../common/buttons/ApproveButton";
+import CancelButton from "../common/buttons/CancelButton";
+import CircleIconButton from "../common/buttons/CircleIconButton";
 import { NewCategoryForm, NewItemForm } from "./formElements";
 
 export const PopoverBase = ({ triggerElement, headerElement, bodyElement }) => {

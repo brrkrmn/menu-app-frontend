@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
-import { SubmitButton } from "../../elements/buttons";
+import SubmitButton from "../../common/buttons/SubmitButton.js";
 import { FormContainer, PasswordInput, TextInput } from "../../elements/formElements";
 import useField from '../../hooks/useField';
 import { logUserIn } from '../../reducers/loggedInUserReducer';

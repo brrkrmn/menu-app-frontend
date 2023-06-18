@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SubmitButton } from "../../elements/buttons";
+import SubmitButton from "../../common/buttons/SubmitButton";
 import { FormContainer, PasswordInput, TextInput } from "../../elements/formElements";
 import useField from '../../hooks/useField';
 import signupService from '../../services/signup';
