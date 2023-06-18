@@ -1,4 +1,4 @@
-import { DeleteIcon, EditIcon } from "@chakra-ui/icons";
+import { AddIcon, DeleteIcon, EditIcon } from "@chakra-ui/icons";
 import {
   Box,
   Popover,
@@ -37,6 +37,17 @@ export const PopoverBase = ({ triggerElement, headerElement, bodyElement }) => {
         </>
       )}
     </Popover>
+  );
+};
+
+export const AddPopover = ({ target }) => {
+  const headerElement = target === "category" ? "Yeni kategori ekleyin" : "Yeni item ekleyin";
+  return (
+    <PopoverBase
+      headerElement={headerElement}
+      triggerElement={<CircleIconButton label={"add"} icon={<AddIcon />} />}
+      bodyElement={target === "category" ? <NewCategoryForm /> : <NewItemForm />}
+    />
   );
 };
 

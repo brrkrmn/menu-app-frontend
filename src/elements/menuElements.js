@@ -1,6 +1,6 @@
 import { Box, Flex, Table, TableCaption, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 import React from "react";
-import { DeletePopover, EditPopover } from "./popovers";
+import { AddPopover, DeletePopover, EditPopover } from "./popovers";
 
 export const CategoryTable = ({ category }) => {
   return (
@@ -30,6 +30,7 @@ export const CategoryTable = ({ category }) => {
         </Table>
       </Box>
       <Flex direction="column" mt="8px" gap="2px">
+        <AddPopover target="item" />
         <EditPopover target={category} />
         <DeletePopover text="Kategoriyi silmek istediğinize emin misiniz?" />
       </Flex>
