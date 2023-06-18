@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import SubmitButton from "../../common/buttons/SubmitButton";
-import { FormContainer, PasswordInput, TextInput } from "../../elements/formElements";
+import FormContainer from "../../common/forms/FormContainer";
+import PasswordInput from "../../common/forms/PasswordInput";
+import TextInput from "../../common/forms/TextInput";
 import useField from '../../hooks/useField';
 import signupService from '../../services/signup';
 

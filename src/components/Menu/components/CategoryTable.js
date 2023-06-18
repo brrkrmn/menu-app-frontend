@@ -1,8 +1,10 @@
-import { Box, Flex, Table, TableCaption, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
-import React from "react";
-import { AddPopover, DeletePopover, EditPopover } from "./popovers";
+import { Box, Flex, Table, TableCaption, Tbody, Th, Thead, Tr } from "@chakra-ui/react";
+import AddPopover from "./AddPopover";
+import DeletePopover from "./DeletePopover";
+import EditPopover from "./EditPopover";
+import ItemTable from "./ItemTable";
 
-export const CategoryTable = ({ category }) => {
+const CategoryTable = ({ category }) => {
   return (
     <Flex>
       <Box padding="20px 40px" boxShadow="base" borderRadius="20px" transition="0.3s" _hover={{ boxShadow: "xl" }}>
@@ -38,15 +40,4 @@ export const CategoryTable = ({ category }) => {
   );
 };
 
-export const ItemTable = ({ item }) => {
-  return (
-    <Tr>
-      <Td pl={0}>{item.name}</Td>
-      <Td pl={0}>{item.price}</Td>
-      <Td pr={0}>
-        <EditPopover target={item} />
-        <DeletePopover text="İtemi silmek istediğinize emin misiniz?" />
-      </Td>
-    </Tr>
-  );
-};
+export default CategoryTable;
