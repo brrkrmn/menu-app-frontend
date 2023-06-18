@@ -10,7 +10,7 @@ export const CategoryTable = ({ category }) => {
           <Thead>
             <Flex>
               <TableCaption as="label" fontSize="2xl" color="#6D8B74" margin={0} pl={0}>
-                {category.categoryName}
+                {category.name}
               </TableCaption>
             </Flex>
             <Tr>
@@ -41,8 +41,8 @@ export const CategoryTable = ({ category }) => {
 export const ItemTable = ({ item }) => {
   return (
     <Tr>
-      <Td pl={0}>{item.itemName}</Td>
-      <Td pl={0}>{item.itemPrice}</Td>
+      <Td pl={0}>{item.name}</Td>
+      <Td pl={0}>{item.price}</Td>
       <Td pr={0}>
         <EditPopover target={item} />
         <DeletePopover text="İtemi silmek istediğinize emin misiniz?" />

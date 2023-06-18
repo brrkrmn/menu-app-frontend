@@ -1,5 +1,5 @@
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import { Button, FormControl, Input, InputGroup, InputRightElement, VStack } from "@chakra-ui/react";
+import { FormControl, Input, InputGroup, InputRightElement, VStack } from "@chakra-ui/react";
 import useField from "../hooks/useField";
 import useToggle from "../hooks/useToggle";
 export const FormContainer = ({ onSubmit, children }) => {
@@ -44,23 +44,6 @@ export const PasswordInput = ({ password }) => {
         {visible ? <ViewIcon /> : <ViewOffIcon />}
       </InputRightElement>
     </InputGroup>
-  );
-};
-
-export const SubmitButton = ({ buttonText }) => {
-  return (
-    <Button
-      type="submit"
-      borderRadius="20px"
-      bg="#6D8B74"
-      color="white"
-      w="full"
-      _hover={{
-        bg: "#5F7161",
-      }}
-    >
-      {buttonText}
-    </Button>
   );
 };
 

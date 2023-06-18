@@ -53,18 +53,18 @@ export const AddPopover = ({ target }) => {
 
 export const EditPopover = ({ target }) => {
   let targetType = "";
-  if (target.categoryName) {
+  if (!target.price) {
     targetType = "category";
-  } else if (target.itemName) {
+  } else if (target.price) {
     targetType = "item";
   }
 
   const headerElement = targetType === "category" ? "Kategoriyi düzenleyin" : "İtemi düzenleyin";
   const BodyElement = () => {
     return targetType === "category" ? (
-      <NewCategoryForm initialName={target.categoryName} />
+      <NewCategoryForm initialName={target.name} />
     ) : (
-      <NewItemForm initialName={target.itemName} initialPrice={target.itemPrice} />
+      <NewItemForm initialName={target.name} initialPrice={target.price} />
     );
   };
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
-import { FormContainer, PasswordInput, SubmitButton, TextInput } from '../../elements/formElements';
+import { SubmitButton } from "../../elements/buttons";
+import { FormContainer, PasswordInput, TextInput } from "../../elements/formElements";
 import useField from '../../hooks/useField';
 import { logUserIn } from '../../reducers/loggedInUserReducer';
 import loginService from '../../services/login';
