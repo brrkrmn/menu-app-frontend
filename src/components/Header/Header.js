@@ -1,11 +1,10 @@
 import { SunIcon } from '@chakra-ui/icons';
-import { Flex, IconButton } from '@chakra-ui/react';
-import React from 'react';
+import { Flex, IconButton } from "@chakra-ui/react";
 import { AiOutlineHome } from 'react-icons/ai';
 import { LuLogOut } from 'react-icons/lu';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { removeUser } from "../../reducers/loggedInUserReducer";
+import { removeUser } from "reducers/loggedInUserReducer";
 
 const Header = () => {
   const navigate = useNavigate()

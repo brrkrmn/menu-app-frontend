@@ -1,6 +1,6 @@
 import { FormControl } from "@chakra-ui/react";
-import TextInput from "../../../common/forms/TextInput";
-import useField from "../../../hooks/useField";
+import TextInput from "common/forms/TextInput";
+import useField from "hooks/useField";
 
 const NewItemForm = ({ initialName, initialPrice }) => {
   const itemName = useField("text", initialName);

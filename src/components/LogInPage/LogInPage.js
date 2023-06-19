@@ -1,6 +1,5 @@
 import { Box, Container, Flex, Heading, Spacer, Text } from '@chakra-ui/react';
-import React from 'react';
-import LogInForm from '../LogInForm/LogInForm';
+import LogInForm from "components/LogInForm/LogInForm";
 
 const LogInPage = () => {
 

@@ -1,8 +1,8 @@
 import { EditIcon } from "@chakra-ui/icons";
-import PopoverBase from "../../../common/PopoverBase";
-import CircleIconButton from "../../../common/buttons/CircleIconButton";
-import NewCategoryForm from "./NewCategoryForm";
-import NewItemForm from "./NewItemForm";
+import PopoverBase from "common/PopoverBase";
+import CircleIconButton from "common/buttons/CircleIconButton";
+import NewCategoryForm from "components/Menu/components/NewCategoryForm";
+import NewItemForm from "components/Menu/components/NewItemForm";
 
 const EditPopover = ({ target }) => {
   let targetType = "";

@@ -1,6 +1,6 @@
 import { Td, Tr } from "@chakra-ui/react";
-import DeletePopover from "./DeletePopover";
-import EditPopover from "./EditPopover";
+import DeletePopover from "components/Menu/components/DeletePopover";
+import EditPopover from "components/Menu/components/EditPopover";
 
 const ItemTable = ({ item }) => {
   return (

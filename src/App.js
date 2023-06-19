@@ -1,13 +1,13 @@
 import React from "react";
 
+import Dashboard from "components/Dashboard";
+import LandingPage from "components/LandingPage/LandingPage";
+import LogInPage from "components/LogInPage/LogInPage";
+import ProtectedRoutes from "components/ProtectedRoutes/ProtectedRoutes";
+import SignUpPage from "components/SignUpPage/SignUpPage";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
-import Dashboard from "./components/Dashboard/Dashboard";
-import LandingPage from "./components/LandingPage/LandingPage";
-import LogInPage from "./components/LogInPage/LogInPage";
-import ProtectedRoutes from "./components/ProtectedRoutes/ProtectedRoutes";
-import SignUpPage from "./components/SignUpPage/SignUpPage";
-import { initializeLoggedInUser } from "./reducers/loggedInUserReducer";
+import { initializeLoggedInUser } from "reducers/loggedInUserReducer.js";
 
 function App() {
   const dispatch = useDispatch();

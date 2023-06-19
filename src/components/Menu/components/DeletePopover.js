@@ -1,6 +1,6 @@
 import { DeleteIcon } from "@chakra-ui/icons";
-import PopoverBase from "../../../common/PopoverBase";
-import CircleIconButton from "../../../common/buttons/CircleIconButton";
+import PopoverBase from "common/PopoverBase";
+import CircleIconButton from "common/buttons/CircleIconButton";
 
 const DeletePopover = ({ text }) => {
   return (

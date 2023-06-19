@@ -1,5 +1,5 @@
 import { FormControl, Input } from "@chakra-ui/react";
-import useField from "../../../hooks/useField";
+import useField from "hooks/useField";
 
 const NewCategoryForm = ({ initialName }) => {
   const categoryName = useField("text", initialName);

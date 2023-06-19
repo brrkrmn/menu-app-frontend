@@ -1,8 +1,8 @@
 import { Box, Flex, Table, TableCaption, Tbody, Th, Thead, Tr } from "@chakra-ui/react";
-import AddPopover from "./AddPopover";
-import DeletePopover from "./DeletePopover";
-import EditPopover from "./EditPopover";
-import ItemTable from "./ItemTable";
+import AddPopover from "components/Menu/components/AddPopover";
+import DeletePopover from "components/Menu/components/DeletePopover";
+import EditPopover from "components/Menu/components/EditPopover";
+import ItemTable from "components/Menu/components/ItemTable";
 
 const CategoryTable = ({ category }) => {
   return (

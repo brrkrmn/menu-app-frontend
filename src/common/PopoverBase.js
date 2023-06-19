@@ -7,9 +7,9 @@ import {
   PopoverHeader,
   PopoverTrigger,
 } from "@chakra-ui/react";
+import ApproveButton from "common/buttons/ApproveButton";
+import CancelButton from "common/buttons/CancelButton";
 import React from "react";
-import ApproveButton from "../common/buttons/ApproveButton";
-import CancelButton from "../common/buttons/CancelButton";
 
 const PopoverBase = ({ triggerElement, headerElement, bodyElement, approveButtonText }) => {
   const initRef = React.useRef();

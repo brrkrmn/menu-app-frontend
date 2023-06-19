@@ -1,8 +1,7 @@
 import { Divider, Flex } from "@chakra-ui/react";
-import React from "react";
+import Header from "components/Header/Header";
+import Menu from "components/Menu/Menu";
 import { useNavigate } from "react-router-dom";
-import Header from "../Header/Header";
-import Menu from "../Menu/Menu";
 
 const Dashboard = () => {
   const navigate = useNavigate();
