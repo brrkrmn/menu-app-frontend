@@ -1,12 +1,13 @@
 import { DeleteIcon } from "@chakra-ui/icons";
 import PopoverBase from "common/PopoverBase";
-import CircleIconButton from "common/buttons/CircleIconButton";
+import SquareIconButton from "common/buttons/SquareIconButton";
 import { deletePopoverTitle } from "components/Menu/components/popovers/constants";
 const DeletePopover = ({ target }) => {
   return (
     <PopoverBase
-      triggerElement={<CircleIconButton label="delete" icon={<DeleteIcon />} />}
+      triggerElement={<SquareIconButton label="delete" icon={<DeleteIcon />} />}
       headerElement={deletePopoverTitle[target]}
+      placement="right"
     />
   );
 };

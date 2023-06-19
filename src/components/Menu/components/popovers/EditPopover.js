@@ -1,6 +1,6 @@
 import { EditIcon } from "@chakra-ui/icons";
 import PopoverBase from "common/PopoverBase";
-import CircleIconButton from "common/buttons/CircleIconButton";
+import SquareIconButton from "common/buttons/SquareIconButton";
 import NewCategoryForm from "components/Menu/components/forms/NewCategoryForm";
 import NewItemForm from "components/Menu/components/forms/NewItemForm";
 import { editPopoverTitle, popoverTarget } from "components/Menu/components/popovers/constants";
@@ -16,8 +16,9 @@ const EditPopover = ({ target, targetObject }) => {
 
   return (
     <PopoverBase
+      placement="right"
       headerElement={editPopoverTitle[target]}
-      triggerElement={<CircleIconButton label={"edit"} icon={<EditIcon />} />}
+      triggerElement={<SquareIconButton label={"edit"} icon={<EditIcon />} />}
       bodyElement={<BodyElement />}
       approveButtonText={"Kaydet"}
     />

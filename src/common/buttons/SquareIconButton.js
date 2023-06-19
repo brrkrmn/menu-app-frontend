@@ -1,7 +1,7 @@
 import { IconButton } from "@chakra-ui/react";
 import React from "react";
 
-const CircleIconButton = React.forwardRef(({ icon, label, ...rest }, ref) => {
+const SquareIconButton = React.forwardRef(({ icon, label, ...rest }, ref) => {
   return (
     <IconButton
       ref={ref}
@@ -18,4 +18,4 @@ const CircleIconButton = React.forwardRef(({ icon, label, ...rest }, ref) => {
   );
 });
 
-export default CircleIconButton;
+export default SquareIconButton;
