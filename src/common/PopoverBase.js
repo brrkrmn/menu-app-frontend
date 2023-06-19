@@ -28,7 +28,7 @@ const PopoverBase = ({ triggerElement, headerElement, bodyElement, approveButton
             <PopoverBody display="flex" flexDirection="column" justifyContent="center" gap="12px">
               {bodyElement || null}
               <Box display="flex" justifyContent="center" gap="8px">
-                <ApproveButton text={approveButtonText} />
+                <ApproveButton>{approveButtonText}</ApproveButton>
                 <CancelButton onClick={onClose} ref={initRef} />
               </Box>
             </PopoverBody>
