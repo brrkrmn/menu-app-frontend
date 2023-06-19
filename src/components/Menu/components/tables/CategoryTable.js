@@ -1,8 +1,8 @@
 import { Box, Flex, Table, TableCaption, Tbody, Th, Thead, Tr } from "@chakra-ui/react";
-import AddPopover from "components/Menu/components/AddPopover";
-import DeletePopover from "components/Menu/components/DeletePopover";
-import EditPopover from "components/Menu/components/EditPopover";
-import ItemTable from "components/Menu/components/ItemTable";
+import AddPopover from "components/Menu/components/popovers/AddPopover";
+import DeletePopover from "components/Menu/components/popovers/DeletePopover";
+import EditPopover from "components/Menu/components/popovers/EditPopover";
+import ItemTable from "components/Menu/components/tables/ItemTable";
 
 const CategoryTable = ({ category }) => {
   return (
@@ -17,7 +17,7 @@ const CategoryTable = ({ category }) => {
             </Flex>
             <Tr>
               <Th pl={0} w="3xs">
-                Item
+                Ürün
               </Th>
               <Th pl={0} w="3xs">
                 Fiyat
@@ -33,8 +33,8 @@ const CategoryTable = ({ category }) => {
       </Box>
       <Flex direction="column" mt="8px" gap="2px">
         <AddPopover target="item" />
-        <EditPopover target={category} />
-        <DeletePopover text="Kategoriyi silmek istediğinize emin misiniz?" />
+        <EditPopover target="category" targetObject={category} />
+        <DeletePopover target="category" />
       </Flex>
     </Flex>
   );
