@@ -5,7 +5,7 @@ import { deletePopoverTitle } from "components/Menu/components/popovers/constant
 const DeletePopover = ({ target }) => {
   return (
     <PopoverBase
-      triggerElement={<CircleIconButton label={"delete"} icon={<DeleteIcon />} />}
+      triggerElement={<CircleIconButton label="delete" icon={<DeleteIcon />} />}
       headerElement={deletePopoverTitle[target]}
     />
   );
