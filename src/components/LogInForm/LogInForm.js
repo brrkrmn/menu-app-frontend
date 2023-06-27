@@ -3,7 +3,7 @@ import SubmitButton from "common/buttons/SubmitButton.js";
 import FormContainer from "common/forms/FormContainer";
 import PasswordInput from "common/forms/PasswordInput";
 import TextInput from "common/forms/TextInput";
-import { schema } from "components/LogInForm/LogInForm.constants";
+import { schema } from "components/LogInForm/LogInForm.constants.js";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { logUserIn } from "reducers/loggedInUserReducer";
