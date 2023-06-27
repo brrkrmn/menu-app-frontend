@@ -3,7 +3,7 @@ import TextInput from "common/forms/TextInput";
 import { useForm } from "react-hook-form";
 
 const NewItemForm = ({ initialName, initialPrice }) => {
-  const { register } = useForm();
+  const { register } = useForm({ defaultValues: { name: initialName, price: initialPrice } });
   return (
     <FormControl display="flex" flexDirection="column" gap="4px">
       <TextInput name="name" register={register} placeholder="Ürün ismi" radius="8px" />

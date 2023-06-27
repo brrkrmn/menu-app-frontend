@@ -2,7 +2,9 @@ import { FormControl, Input } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 
 const NewCategoryForm = ({ initialName }) => {
-  const { register } = useForm();
+  const { register } = useForm({
+    defaultValues: { name: initialName },
+  });
 
   return (
     <FormControl display="flex" flexDirection="column" gap="4px">
