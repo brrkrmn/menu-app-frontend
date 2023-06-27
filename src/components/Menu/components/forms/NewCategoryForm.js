@@ -1,18 +1,12 @@
 import { FormControl, Input } from "@chakra-ui/react";
-import useField from "hooks/useField";
+import { useForm } from "react-hook-form";
 
 const NewCategoryForm = ({ initialName }) => {
-  const categoryName = useField("text", initialName);
+  const { register } = useForm();
+
   return (
     <FormControl display="flex" flexDirection="column" gap="4px">
-      <Input
-        id="categoryName"
-        type={categoryName.type}
-        value={categoryName.value}
-        onChange={categoryName.onChange}
-        placeholder="Kategori İsmi"
-        focusBorderColor="#6D8B74"
-      />
+      <Input {...register("name")} placeholder="Kategori İsmi" focusBorderColor="#6D8B74" />
     </FormControl>
   );
 };
