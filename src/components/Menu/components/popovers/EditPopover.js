@@ -8,9 +8,9 @@ import { editPopoverTitle, popoverTarget } from "components/Menu/components/popo
 const EditPopover = ({ target, targetObject }) => {
   const BodyElement = () => {
     return target === popoverTarget.category ? (
-      <NewCategoryForm initialName={targetObject.name} />
+      <NewCategoryForm defaultValues={targetObject} />
     ) : (
-      <NewItemForm initialName={targetObject.name} initialPrice={targetObject.price} />
+      <NewItemForm defaultValues={targetObject} />
     );
   };
 
