@@ -3,7 +3,7 @@ import SubmitButton from "common/buttons/SubmitButton.js";
 import FormContainer from "common/forms/FormContainer";
 import PasswordInput from "common/forms/PasswordInput";
 import TextInput from "common/forms/TextInput";
-import { userLoginSchema } from "components/LoginForm/LoginForm.constants";
+import { schema } from "components/LoginForm/LoginForm.constants";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { logUserIn } from "reducers/loggedInUserReducer";
@@ -15,7 +15,7 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(userLoginSchema),
+    resolver: yupResolver(schema),
   });
   const dispatch = useDispatch();
   const handleLogin = async (user) => {

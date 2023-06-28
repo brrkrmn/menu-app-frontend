@@ -3,7 +3,7 @@ import SubmitButton from "common/buttons/SubmitButton";
 import FormContainer from "common/forms/FormContainer";
 import PasswordInput from "common/forms/PasswordInput";
 import TextInput from "common/forms/TextInput";
-import { userSignupSchema } from "components/SignupForm/SignupForm.constants";
+import { schema } from "components/SignupForm/SignupForm.constants";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import signupService from "services/signup";
@@ -15,7 +15,7 @@ const SignupForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(userSignupSchema),
+    resolver: yupResolver(schema),
   });
 
   const handleSignup = async (newUser) => {
