@@ -1,32 +1,32 @@
+import { yupResolver } from "@hookform/resolvers/yup";
 import SubmitButton from "common/buttons/SubmitButton";
 import FormContainer from "common/forms/FormContainer";
 import PasswordInput from "common/forms/PasswordInput";
 import TextInput from "common/forms/TextInput";
-import useField from "hooks/useField";
+import { userSchema } from "constants/validations";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import signupService from "services/signup";
 
 const SignUpForm = () => {
   const navigate = useNavigate();
-  const name = useField("text");
-  const password = useField("password");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(userSchema),
+  });
 
-  const handleSignUp = async (event) => {
-    event.preventDefault();
-    const newUser = {
-      name: name.value,
-      password: password.value,
-    };
+  const handleSignUp = async (newUser) => {
     await signupService.create(newUser);
-    name.setValue("");
-    password.setValue("");
     navigate("/login");
   };
 
   return (
-    <FormContainer onSubmit={handleSignUp}>
-      <TextInput target={name} placeholder="İsim" id="signupName" />
-      <PasswordInput password={password} id="signupPassword" />
+    <FormContainer onSubmit={handleSubmit(handleSignUp)}>
+      <TextInput name="name" register={register} errors={errors} placeholder="İsim" />
+      <PasswordInput name="password" errors={errors} register={register} />
       <SubmitButton>Kaydol</SubmitButton>
     </FormContainer>
   );
