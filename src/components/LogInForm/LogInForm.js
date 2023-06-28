@@ -1,9 +1,9 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import SubmitButton from "common/buttons/SubmitButton.js";
-import { userSchema } from "common/constants";
 import FormContainer from "common/forms/FormContainer";
 import PasswordInput from "common/forms/PasswordInput";
 import TextInput from "common/forms/TextInput";
+import { userSchema } from "constants/validations";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { logUserIn } from "reducers/loggedInUserReducer";
