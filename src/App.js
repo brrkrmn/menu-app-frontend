@@ -4,7 +4,7 @@ import Dashboard from "components/Dashboard";
 import LandingPage from "components/LandingPage/LandingPage";
 import LoginPage from "components/LoginPage";
 import ProtectedRoutes from "components/ProtectedRoutes/ProtectedRoutes";
-import SignupPage from "components/SignupPage/SignupPage";
+import SignupPage from "components/SignupPage/supage";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { initializeLoggedInUser } from "reducers/loggedInUserReducer.js";
