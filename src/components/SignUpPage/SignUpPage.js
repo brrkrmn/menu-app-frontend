@@ -1,5 +1,5 @@
-import { Box, Container, Flex, Heading, Spacer, Text } from '@chakra-ui/react';
-import SignupForm from "components/SignupForm";
+import { Box, Container, Flex, Heading, Spacer, Text } from "@chakra-ui/react";
+import SignupForm from "components/SignupForm/SignupForm";
 
 const SignupPage = () => {
   return (
