@@ -1,2 +1,2 @@
-export * from './LogInPage';
-export { default } from './LogInPage';
+export * from "./LoginPage";
+export { default } from "./LoginPage";

@@ -1,2 +1,2 @@
-export * from './LogInForm';
-export { default } from './LogInForm';
+export * from "./LoginForm";
+export { default } from "./LoginForm";

@@ -2,9 +2,9 @@ import React from "react";
 
 import Dashboard from "components/Dashboard";
 import LandingPage from "components/LandingPage/LandingPage";
-import LogInPage from "components/LogInPage/LogInPage";
+import LoginPage from "components/LoginPage";
 import ProtectedRoutes from "components/ProtectedRoutes/ProtectedRoutes";
-import SignUpPage from "components/SignUpPage/SignUpPage";
+import SignupPage from "components/SignupPage";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { initializeLoggedInUser } from "reducers/loggedInUserReducer.js";
@@ -24,8 +24,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={loggedInUser ? <Navigate replace to="/home" /> : <LandingPage />} />
-      <Route path="/signup" element={loggedInUser ? <Navigate replace to="/home" /> : <SignUpPage />} />
-      <Route path="/login" element={loggedInUser ? <Navigate replace to="/home" /> : <LogInPage />} />
+      <Route path="/signup" element={loggedInUser ? <Navigate replace to="/home" /> : <SignupPage />} />
+      <Route path="/login" element={loggedInUser ? <Navigate replace to="/home" /> : <LoginPage />} />
       <Route element={<ProtectedRoutes />}>
         <Route path="/home" element={<Dashboard />} />
       </Route>
