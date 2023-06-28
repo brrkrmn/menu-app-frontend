@@ -1,1 +1,1 @@
-export { default } from "./liform";
+export { default } from "./LoginForm";
