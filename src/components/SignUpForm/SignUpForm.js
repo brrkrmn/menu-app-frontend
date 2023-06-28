@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import signupService from "services/signup";
 
-const SignUpForm = () => {
+const SignupForm = () => {
   const navigate = useNavigate();
   const {
     register,
@@ -18,13 +18,13 @@ const SignUpForm = () => {
     resolver: yupResolver(userSchema),
   });
 
-  const handleSignUp = async (newUser) => {
+  const handleSignup = async (newUser) => {
     await signupService.create(newUser);
     navigate("/login");
   };
 
   return (
-    <FormContainer onSubmit={handleSubmit(handleSignUp)}>
+    <FormContainer onSubmit={handleSubmit(handleSignup)}>
       <TextInput name="name" register={register} errors={errors} placeholder="İsim" />
       <PasswordInput name="password" errors={errors} register={register} />
       <SubmitButton>Kaydol</SubmitButton>
@@ -32,4 +32,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default SignupForm;

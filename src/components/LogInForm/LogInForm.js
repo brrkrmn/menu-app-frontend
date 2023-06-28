@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { logUserIn } from "reducers/loggedInUserReducer";
 import loginService from "services/login";
 
-const LogInForm = () => {
+const LoginForm = () => {
   const {
     register,
     handleSubmit,
@@ -18,17 +18,17 @@ const LogInForm = () => {
     resolver: yupResolver(userSchema),
   });
   const dispatch = useDispatch();
-  const handleLogIn = async (user) => {
+  const handleLogin = async (user) => {
     try {
-      const userToLogIn = await loginService.login(user);
-      dispatch(logUserIn(userToLogIn));
+      const userToLogin = await loginService.login(user);
+      dispatch(logUserIn(userToLogin));
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <FormContainer onSubmit={handleSubmit(handleLogIn)}>
+    <FormContainer onSubmit={handleSubmit(handleLogin)}>
       <TextInput name="name" errors={errors} register={register} placeholder="İsim" />
       <PasswordInput name="password" errors={errors} register={register} />
       <SubmitButton>Giriş Yap</SubmitButton>
@@ -36,4 +36,4 @@ const LogInForm = () => {
   );
 };
 
-export default LogInForm;
+export default LoginForm;
