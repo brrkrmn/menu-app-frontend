@@ -4,7 +4,9 @@ import FormContainer from "common/forms/FormContainer";
 import PasswordInput from "common/forms/PasswordInput";
 import TextInput from "common/forms/TextInput";
 import { schema } from "components/LoginForm/LoginForm.constants";
+import { failedLogin } from "constants/notifications";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { logUserIn } from "reducers/loggedInUserReducer";
 import loginService from "services/login";
@@ -24,6 +26,8 @@ const LoginForm = () => {
       dispatch(logUserIn(userToLogin));
     } catch (error) {
       console.log(error);
+      // console.log(type);
+      toast(failedLogin.message);
     }
   };
 

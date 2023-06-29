@@ -5,10 +5,10 @@ import LandingPage from "components/LandingPage/LandingPage";
 import LoginPage from "components/LoginPage/LoginPage";
 import ProtectedRoutes from "components/ProtectedRoutes/ProtectedRoutes";
 import SignupPage from "components/SignupPage/SignupPage";
+import Toast from "components/Toast/Toast";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { initializeLoggedInUser } from "reducers/loggedInUserReducer.js";
-
 function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,14 +22,17 @@ function App() {
     loggedInUser && navigate("/home");
   }, []);
   return (
-    <Routes>
-      <Route path="/" element={loggedInUser ? <Navigate replace to="/home" /> : <LandingPage />} />
-      <Route path="/signup" element={loggedInUser ? <Navigate replace to="/home" /> : <SignupPage />} />
-      <Route path="/login" element={loggedInUser ? <Navigate replace to="/home" /> : <LoginPage />} />
-      <Route element={<ProtectedRoutes />}>
-        <Route path="/home" element={<Dashboard />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={loggedInUser ? <Navigate replace to="/home" /> : <LandingPage />} />
+        <Route path="/signup" element={loggedInUser ? <Navigate replace to="/home" /> : <SignupPage />} />
+        <Route path="/login" element={loggedInUser ? <Navigate replace to="/home" /> : <LoginPage />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/home" element={<Dashboard />} />
+        </Route>
+      </Routes>
+      <Toast />
+    </>
   );
 }
 
