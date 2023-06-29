@@ -1,10 +1,15 @@
-import { Input } from "@chakra-ui/react";
+import { FormControl, FormErrorMessage, Input } from "@chakra-ui/react";
 const TextInput = ({ name, errors, placeholder, register, radius = "20px" }) => {
   return (
-    <>
-      <Input placeholder={placeholder} focusBorderColor="#6D8B74" borderRadius={radius} {...register(name)} />
-      <p>{errors?.[name]?.message}</p>
-    </>
+    <FormControl isInvalid={!!errors?.[name]?.message}>
+      <Input
+        placeholder={placeholder}
+        focusBorderColor={!errors?.[name] ? "#6D8B74" : "#E53E3E"}
+        borderRadius={radius}
+        {...register(name)}
+      />
+      <FormErrorMessage>{errors?.[name]?.message}</FormErrorMessage>
+    </FormControl>
   );
 };
 
