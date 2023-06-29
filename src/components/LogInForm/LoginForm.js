@@ -20,14 +20,14 @@ const LoginForm = () => {
     resolver: yupResolver(schema),
   });
   const dispatch = useDispatch();
+  const { id, type, message } = failedLogin;
   const handleLogin = async (user) => {
     try {
       const userToLogin = await loginService.login(user);
       dispatch(logUserIn(userToLogin));
     } catch (error) {
       console.log(error);
-      // console.log(type);
-      toast(failedLogin.message);
+      toast[type](message, { id });
     }
   };
 
