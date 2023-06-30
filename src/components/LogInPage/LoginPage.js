@@ -24,7 +24,6 @@ const LoginPage = () => {
         <Text color="#424949">
           Hesabınız yok mu?
           <Text as="a" href="/signup" color="#6D8B74" fontWeight="bold">
-            <> </>
             Üye olun
           </Text>
         </Text>

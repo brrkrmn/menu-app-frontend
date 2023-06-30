@@ -2,6 +2,7 @@ import { DeleteIcon } from "@chakra-ui/icons";
 import PopoverBase from "common/PopoverBase";
 import SquareIconButton from "common/buttons/SquareIconButton";
 import { deletePopoverTitle } from "components/Menu/components/popovers/constants";
+
 const DeletePopover = ({ target }) => {
   return (
     <PopoverBase

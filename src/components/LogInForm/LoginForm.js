@@ -4,10 +4,12 @@ import FormContainer from "common/forms/FormContainer";
 import PasswordInput from "common/forms/PasswordInput";
 import TextInput from "common/forms/TextInput";
 import { schema } from "components/LoginForm/LoginForm.constants";
+import { notifications } from "constants/notifications";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { logUserIn } from "reducers/loggedInUserReducer";
 import loginService from "services/login";
+import notify from "utils/notify";
 
 const LoginForm = () => {
   const {
@@ -24,6 +26,7 @@ const LoginForm = () => {
       dispatch(logUserIn(userToLogin));
     } catch (error) {
       console.log(error);
+      notify(notifications.failedLogin);
     }
   };
 
