@@ -1,5 +1,6 @@
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { FormControl, FormErrorMessage, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
+import { colors } from "constants/index";
 import useToggle from "hooks/useToggle";
 
 const PasswordInput = ({ name, errors, register }) => {
@@ -9,7 +10,7 @@ const PasswordInput = ({ name, errors, register }) => {
       <InputGroup>
         <Input
           type={visible ? "text" : "password"}
-          focusBorderColor={!errors?.[name] ? "#6D8B74" : "#E53E3E"}
+          focusBorderColor={!errors?.[name] ? colors.green : colors.red}
           placeholder="Şifre"
           borderRadius="20px"
           {...register(name)}
