@@ -4,12 +4,12 @@ import FormContainer from "common/forms/FormContainer";
 import PasswordInput from "common/forms/PasswordInput";
 import TextInput from "common/forms/TextInput";
 import { schema } from "components/LoginForm/LoginForm.constants";
-import { failedLogin } from "constants/notifications";
+import { notifications } from "constants/notifications";
 import { useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { logUserIn } from "reducers/loggedInUserReducer";
 import loginService from "services/login";
+import notify from "utils/notify";
 
 const LoginForm = () => {
   const {
@@ -20,14 +20,13 @@ const LoginForm = () => {
     resolver: yupResolver(schema),
   });
   const dispatch = useDispatch();
-  const { id, type, message } = failedLogin;
   const handleLogin = async (user) => {
     try {
       const userToLogin = await loginService.login(user);
       dispatch(logUserIn(userToLogin));
     } catch (error) {
       console.log(error);
-      toast[type](message, { id });
+      notify(notifications.failedLogin);
     }
   };
 

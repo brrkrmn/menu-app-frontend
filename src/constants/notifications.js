@@ -1,5 +1,7 @@
-export const failedLogin = {
-  id: "login",
-  type: "error",
-  message: "Geçersiz isim ya da şifre.",
+export const notifications = {
+  failedLogin: {
+    id: "login",
+    type: "error",
+    message: "Geçersiz isim ya da şifre.",
+  },
 };
