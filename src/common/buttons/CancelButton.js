@@ -1,13 +1,14 @@
 import { Button } from "@chakra-ui/react";
-
+import { colors } from "constants/index.js";
 const CancelButton = ({ onClick }) => {
+  const { red, white } = colors;
   return (
     <Button
       flexGrow="1"
       bg="none"
-      border="1px solid #C0392B"
-      color="#C0392B"
-      _hover={{ bg: "#C0392B", color: "white" }}
+      border={`1px solid ${red}`}
+      color={red}
+      _hover={{ bg: red, color: white }}
       onClick={onClick}
       size="sm"
     >

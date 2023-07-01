@@ -3,15 +3,17 @@ import AddPopover from "components/Menu/components/popovers/AddPopover";
 import DeletePopover from "components/Menu/components/popovers/DeletePopover";
 import EditPopover from "components/Menu/components/popovers/EditPopover";
 import ItemTable from "components/Menu/components/tables/ItemTable";
+import { colors } from "constants/index.js";
 
 const CategoryTable = ({ category }) => {
+  const { green } = colors;
   return (
     <Flex>
       <Box padding="20px 40px" boxShadow="base" borderRadius="20px" transition="0.3s" _hover={{ boxShadow: "xl" }}>
         <Table size="md">
           <Thead>
             <Flex>
-              <TableCaption as="label" fontSize="2xl" color="#6D8B74" margin={0} pl={0}>
+              <TableCaption as="label" fontSize="2xl" color={green.main} margin={0} pl={0}>
                 {category.name}
               </TableCaption>
             </Flex>

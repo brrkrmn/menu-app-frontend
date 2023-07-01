@@ -1,7 +1,9 @@
 import { Box, Container, Flex, Heading, Spacer, Text } from "@chakra-ui/react";
 import SignupForm from "components/SignupForm/SignupForm";
+import { colors } from "constants/index.js";
 
 const SignupPage = () => {
+  const { green } = colors;
   return (
     <Flex alignItems="center" justifyContent="space-between" height="100%" w="full">
       <Container
@@ -16,19 +18,19 @@ const SignupPage = () => {
         _hover={{ boxShadow: "xl" }}
         transition="0.3s"
       >
-        <Heading fontFamily="'Wotfard','Wotfard-fallback',sans-serif" fontWeight={500} color="#424949">
+        <Heading fontFamily="'Wotfard','Wotfard-fallback',sans-serif" fontWeight={500} color={green.text}>
           Kaydol
         </Heading>
         <Spacer />
         <SignupForm />
-        <Text color="#424949">
+        <Text color={green.text}>
           Zaten üye misiniz?
-          <Text as="a" href="/login" color="#6D8B74" fontWeight="bold">
+          <Text as="a" href="/login" color={green.main} fontWeight="bold">
             Giriş yapın
           </Text>
         </Text>
       </Container>
-      <Box height="100%" width="50%" bgColor="#6D8B74" borderRadius="20px"></Box>
+      <Box height="100%" width="50%" bgColor={green.main} borderRadius="20px"></Box>
     </Flex>
   );
 };

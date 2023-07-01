@@ -1,6 +1,8 @@
+import { colors } from "constants/index.js";
 import { Toaster } from "react-hot-toast";
 
 const Toast = () => {
+  const { green, red, white } = colors;
   return (
     <Toaster
       position="top-left"
@@ -8,14 +10,14 @@ const Toast = () => {
         duration: 4000,
         success: {
           iconTheme: {
-            primary: "#6D8B74",
-            secondary: "#fff",
+            primary: green.main,
+            secondary: white,
           },
         },
         error: {
           iconTheme: {
-            primary: "#C0392B",
-            secondary: "#fff",
+            primary: red,
+            secondary: white,
           },
         },
       }}
