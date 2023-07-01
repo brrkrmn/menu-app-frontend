@@ -1,5 +1,5 @@
-import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { FormControl, FormErrorMessage, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
+import icons from "common/icons";
 import { colors } from "constants/index";
 import useToggle from "hooks/useToggle";
 
@@ -16,7 +16,7 @@ const PasswordInput = ({ name, errors, register }) => {
           {...register(name)}
         />
         <InputRightElement as="button" type="button" onClick={handleToggleVisible}>
-          {visible ? <ViewIcon /> : <ViewOffIcon />}
+          {visible ? icons.openEye : icons.closeEye}
         </InputRightElement>
       </InputGroup>
       <FormErrorMessage>{errors?.[name]?.message}</FormErrorMessage>
