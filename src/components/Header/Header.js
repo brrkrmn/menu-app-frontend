@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import icons from "common/icons";
+import icons from "components/Header/Header.icons";
 import MenuItem from "components/Header/components/MenuItem";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
