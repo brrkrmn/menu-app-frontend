@@ -1,5 +1,5 @@
 import { FormControl, FormErrorMessage, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import icons from "common/forms/PasswordInput/PasswordInput.icons";
+import icons from "common/icons";
 import { colors } from "constants/index";
 import useToggle from "hooks/useToggle";
 

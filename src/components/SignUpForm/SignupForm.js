@@ -1,7 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import SubmitButton from "common/buttons/SubmitButton";
 import FormContainer from "common/forms/FormContainer";
-import PasswordInput from "common/forms/PasswordInput/PasswordInput";
+import PasswordInput from "common/forms/PasswordInput";
 import TextInput from "common/forms/TextInput";
 import { schema } from "components/SignupForm/SignupForm.constants";
 import { useForm } from "react-hook-form";
