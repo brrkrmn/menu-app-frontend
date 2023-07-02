@@ -27,6 +27,7 @@ const SignupForm = () => {
     <FormContainer onSubmit={handleSubmit(handleSignup)}>
       <TextInput name="name" register={register} errors={errors} placeholder="İsim" />
       <PasswordInput name="password" errors={errors} register={register} />
+      <PasswordInput name="confirmPassword" errors={errors} register={register} placeholder="Şifrenizi yeniden girin" />
       <SubmitButton>Kaydol</SubmitButton>
     </FormContainer>
   );

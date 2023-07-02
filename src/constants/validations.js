@@ -9,3 +9,8 @@ export const passwordValidation = yup
   .string()
   .required("Lütfen şifrenizi girin.")
   .min(6, "Şifreniz 6 veya daha fazla karakterden oluşmalı.");
+
+export const confirmPasswordValidation = yup
+  .string()
+  .required("Lütfen şifrenizi yeniden girin.")
+  .oneOf([yup.ref("password"), null], "Girdiğiniz şifreler uyuşmuyor.");

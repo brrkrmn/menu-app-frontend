@@ -3,7 +3,7 @@ import icons from "common/icons";
 import { colors } from "constants/index";
 import useToggle from "hooks/useToggle";
 
-const PasswordInput = ({ name, errors, register }) => {
+const PasswordInput = ({ name, errors, register, placeholder = "Şifre" }) => {
   const { visible, handleToggleVisible } = useToggle();
   return (
     <FormControl isInvalid={!!errors?.[name]?.message}>
@@ -11,7 +11,7 @@ const PasswordInput = ({ name, errors, register }) => {
         <Input
           type={visible ? "text" : "password"}
           focusBorderColor={!errors?.[name] ? colors.green : colors.red}
-          placeholder="Şifre"
+          placeholder={placeholder}
           borderRadius="20px"
           {...register(name)}
         />
