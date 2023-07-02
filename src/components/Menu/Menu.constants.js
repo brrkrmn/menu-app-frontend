@@ -29,14 +29,7 @@ export const menu = {
     {
       name: "icecek",
       items: [
-        {
-          name: "su",
-          price: "9",
-        },
-        {
-          name: "sldsassjdflo",
-          price: "1",
-        },
+
       ],
     },
   ],

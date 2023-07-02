@@ -7,7 +7,7 @@ const ItemTable = ({ item }) => {
     <Tr>
       <Td pl={0}>{item.name}</Td>
       <Td pl={0}>{item.price}</Td>
-      <Td pr={0}>
+      <Td pr={0} pl={0} display="flex" flexWrap="nowrap">
         <EditPopover target="item" targetObject={item} />
         <DeletePopover target="item" />
       </Td>

@@ -10,7 +10,7 @@ const CategoryTable = ({ category }) => {
   return (
     <Flex>
       <Box padding="20px 40px" boxShadow="base" borderRadius="20px" transition="0.3s" _hover={{ boxShadow: "xl" }}>
-        <Table size="md">
+        <Table size="md" w="lg">
           <Thead>
             <Flex>
               <TableCaption as="label" fontSize="2xl" color={green.main} margin={0} pl={0}>
