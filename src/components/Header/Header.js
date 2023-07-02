@@ -1,8 +1,6 @@
-import { SunIcon } from '@chakra-ui/icons';
 import { Flex } from "@chakra-ui/react";
+import icons from "common/icons";
 import MenuItem from "components/Header/components/MenuItem";
-import { AiOutlineHome } from "react-icons/ai";
-import { LuLogOut } from "react-icons/lu";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { removeUser } from "reducers/loggedInUserReducer";
@@ -18,9 +16,9 @@ const Header = () => {
 
   return (
     <Flex width="full" justifyContent="center" gap="16px">
-      <MenuItem icon={<AiOutlineHome />} />
-      <MenuItem icon={<SunIcon />} />
-      <MenuItem icon={<LuLogOut />} onClick={handleLogOut} />
+      <MenuItem icon={icons.home} />
+      <MenuItem icon={icons.sun} />
+      <MenuItem icon={icons.logout} onClick={handleLogOut} />
     </Flex>
   );
 };
