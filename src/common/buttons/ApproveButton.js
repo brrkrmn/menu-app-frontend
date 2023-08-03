@@ -5,6 +5,7 @@ const ApproveButton = ({ children = "Onayla" }) => {
   const { green, white } = colors;
   return (
     <Button
+      type="submit"
       bg="none"
       flexGrow="1"
       border={`1px solid ${green.main}`}
