@@ -17,3 +17,8 @@ export const deletePopoverTitle = {
   category: "Kategoriyi silmek istediğinize emin misiniz?",
   item: "Ürünü silmek istediğinize emin misiniz?",
 };
+
+export const popoverFormId = {
+  category: "category-form",
+  item: "item-form",
+};
