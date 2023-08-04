@@ -6,7 +6,7 @@ const TextInput = ({ name, errors, placeholder, register, radius = "20px" }) => 
     <FormControl isInvalid={!!errors?.[name]?.message}>
       <Input
         placeholder={placeholder}
-        focusBorderColor={!errors?.[name] ? colors.green : colors.red}
+        focusBorderColor={!errors?.[name] ? colors.green.main : colors.red}
         borderRadius={radius}
         {...register(name)}
       />
