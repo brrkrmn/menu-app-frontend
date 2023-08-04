@@ -11,7 +11,7 @@ import ApproveButton from "common/buttons/ApproveButton";
 import CancelButton from "common/buttons/CancelButton";
 import React from "react";
 
-const PopoverBase = ({ triggerElement, headerElement, bodyElement, approveButtonText, placement }) => {
+const PopoverBase = ({ triggerElement, headerElement, bodyElement, approveButtonText, placement, formId }) => {
   const initRef = React.useRef();
   return (
     <Popover initialFocusRef={initRef} placement={placement}>
@@ -24,7 +24,7 @@ const PopoverBase = ({ triggerElement, headerElement, bodyElement, approveButton
             <PopoverBody display="flex" flexDirection="column" justifyContent="center" gap="12px">
               {bodyElement || null}
               <Box display="flex" justifyContent="center" gap="8px">
-                <ApproveButton>{approveButtonText}</ApproveButton>
+                <ApproveButton formId={formId}>{approveButtonText}</ApproveButton>
                 <CancelButton onClick={onClose} ref={initRef} />
               </Box>
             </PopoverBody>

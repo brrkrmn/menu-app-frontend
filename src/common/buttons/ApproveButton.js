@@ -1,11 +1,12 @@
 import { Button } from "@chakra-ui/react";
 import { colors } from "constants/index.js";
 
-const ApproveButton = ({ children = "Onayla" }) => {
+const ApproveButton = ({ children = "Onayla", formId }) => {
   const { green, white } = colors;
   return (
     <Button
       type="submit"
+      form={formId}
       bg="none"
       flexGrow="1"
       border={`1px solid ${green.main}`}

@@ -1,10 +1,9 @@
-import { FormControl, Input } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
+import { popoverFormId } from "components/Menu/components/popovers/constants";
 import { colors } from "constants/index.js";
-import React from "react";
 import { useForm } from "react-hook-form";
 const NewCategoryForm = ({ defaultValues }) => {
   const { register, handleSubmit } = useForm({ defaultValues });
-  const submitRef = React.useRef();
   const { green } = colors;
 
   const handleAddCategory = () => {
@@ -12,9 +11,15 @@ const NewCategoryForm = ({ defaultValues }) => {
   };
 
   return (
-    <FormControl onSubmit={handleSubmit(handleAddCategory)} display="flex" flexDirection="column" gap="4px">
+    <form
+      id={popoverFormId.category}
+      onSubmit={handleSubmit(handleAddCategory)}
+      display="flex"
+      flexDirection="column"
+      gap="4px"
+    >
       <Input {...register("name")} placeholder="Kategori İsmi" focusBorderColor={green.main} />
-    </FormControl>
+    </form>
   );
 };
 

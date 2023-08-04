@@ -4,7 +4,7 @@ import TextIconButton from "common/buttons/TextIconButton";
 import icons from "common/icons";
 import NewCategoryForm from "components/Menu/components/forms/NewCategoryForm";
 import NewItemForm from "components/Menu/components/forms/NewItemForm";
-import { addPopoverTitle, popoverTarget } from "components/Menu/components/popovers/constants";
+import { addPopoverTitle, popoverFormId, popoverTarget } from "components/Menu/components/popovers/constants";
 
 const AddPopover = ({ target }) => {
   return (
@@ -19,6 +19,7 @@ const AddPopover = ({ target }) => {
         )
       }
       bodyElement={target === popoverTarget.category ? <NewCategoryForm /> : <NewItemForm />}
+      formId={popoverFormId[popoverTarget[target]]}
     />
   );
 };
